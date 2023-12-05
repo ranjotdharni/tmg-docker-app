@@ -1,0 +1,12 @@
+version: '0.1'
+
+services:
+  api: 
+    build:
+      context: ./production/api
+
+  front:
+    build:
+      context: ./production/front
+    ports: 
+      - "3000:80"
