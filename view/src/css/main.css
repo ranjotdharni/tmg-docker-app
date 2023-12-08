@@ -1,0 +1,25 @@
+.creditBox {
+  min-width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.creditBox a {
+    margin-right: 1em;
+}
+
+.formStyle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.addBorder {
+    width: auto !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
