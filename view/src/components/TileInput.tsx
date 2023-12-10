@@ -77,36 +77,9 @@ function SingleTileInput({ tileTypes, passUp } : { tileTypes: [string, string, s
     )
 }
 
-function FullTileInput() {
-    return (
-        <div>
-
-        </div>
-    )
-}
-
 export default function TileInput(props: props) {
-    const [mode, setMode] = useState<string>('single')
-
-    function handleClick(evt: MouseEvent<HTMLButtonElement>) {
-        evt.preventDefault()
-
-        if (mode === 'single')
-        {
-            setMode('full')
-        }
-        else
-        {
-            setMode('single')
-        }
-    }
 
     return (
-        <>
-            {
-                (mode === 'single' ? <SingleTileInput tileTypes={props.tileTypes} passUp={props.passUp} /> : <FullTileInput />)
-            }
-            <button onClick={handleClick}>{(mode === 'single' ? 'Single Tile' : 'All Tiles')}</button>
-        </>
+        <SingleTileInput tileTypes={props.tileTypes} passUp={props.passUp} />
     )
 }

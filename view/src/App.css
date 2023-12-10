@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+a {
+  position: relative;
+  z-index: 2;
+}
+
 .logo {
   height: 6em;
   will-change: filter;

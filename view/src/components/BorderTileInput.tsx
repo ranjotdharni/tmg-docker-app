@@ -4,7 +4,6 @@ import TileInput from "./TileInput";
 let borderPassUp: (images: [string, string, string, string]) => void
 
 interface props {
-    idPassUp: (id: string) => void,
     centerPassUp: (images: string) => void,
     flatPassUp: typeof borderPassUp,
     outwardPassUp: typeof borderPassUp,
@@ -35,12 +34,7 @@ export default function BorderTileInput(props: props) {
 
 
     return (
-        <div>
-            <label>Tile Id</label>
-            <div>
-                <input type='text' onChange={evt => props.idPassUp(evt.target.value)} />
-            </div>
-
+        <div style={{border: 'solid 1px palevioletred', padding: '5px', marginBottom: '10px', borderRadius: '1em'}}>
             <label>Center Tile</label>
             <div>
                 <input type='file' onChange={handleUpload} />

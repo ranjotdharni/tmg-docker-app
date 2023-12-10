@@ -1,40 +1,70 @@
-//package production.api;
-import com.sun.net.httpserver.HttpServer;
-import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
+import java.util.Base64;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 
 class Service {
-
     public static void main(String[] args) throws IOException {
-        // Create HTTP server on port 8080
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
-
-        // Context for the route "/hello"
-        server.createContext("/hello", new HelloHandler());
-
-        // Start the server
+        server.createContext("/upload", new ImageHandler());
         server.start();
         System.out.println("Server started on port 8000");
     }
 
-    // Handler for "/hello" route
-    static class HelloHandler implements HttpHandler {
+    static class ImageHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
-            // Set response headers
-            exchange.getResponseHeaders().set("Content-Type", "text/plain");
-            exchange.sendResponseHeaders(200, 0);
+            exchange.getResponseHeaders().set("Content-Type", "application/json");
 
-            // Get the output stream and write response
-            OutputStream outputStream = exchange.getResponseBody();
-            String response = "Hello, World!";
-            outputStream.write(response.getBytes());
-            outputStream.flush();
-            outputStream.close();
+            if ("POST".equals(exchange.getRequestMethod())) 
+            {
+                InputStream inputStream = exchange.getRequestBody();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead;
+
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                String base64Image = new String(outputStream.toByteArray(), "UTF-8");
+                byte[] imageBytes = Base64.getDecoder().decode(base64Image);
+                ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);
+                BufferedImage bufferedImage = ImageIO.read(bis);
+                Orchestrator _o = new Orchestrator(1920, 1080, bufferedImage);
+                bufferedImage = _o.getCanvas();
+
+                exchange.sendResponseHeaders(200, 0);
+                OutputStream responseStream = exchange.getResponseBody();
+                String response = "{\"message\": \"" + bufferedImageToBase64DataUrl(bufferedImage) + "\"}";
+                responseStream.write(response.getBytes());
+                responseStream.flush();
+                responseStream.close();
+            } 
+            else 
+            {
+                exchange.sendResponseHeaders(405, 0);
+                OutputStream responseStream = exchange.getResponseBody();
+                String response = "Method Not Allowed";
+                responseStream.write(response.getBytes());
+                responseStream.flush();
+                responseStream.close();
+            }
         }
+    }
+
+    private static String bufferedImageToBase64DataUrl(BufferedImage bufferedImage) throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, "png", baos);
+        byte[] imageBytes = baos.toByteArray();
+        String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+        String dataUrl = "data:image/png;base64," + base64Image;
+        return dataUrl;
     }
 }

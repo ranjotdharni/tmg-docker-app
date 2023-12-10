@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "start": "cd view && npm run build && cd .. && docker-compose down && docker system prune -f -a && docker-compose up"
+    }
+}

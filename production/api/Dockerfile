@@ -4,12 +4,8 @@ WORKDIR /api
 
 COPY . .
 
-RUN javac Service.java
+RUN javac *.java
 
 EXPOSE 8000
 
 ENTRYPOINT ["java", "Service"]
-
-#ENTRYPOINT ["java", "-jar", "JavaService.jar"]
-#
-#CMD ["-start"]

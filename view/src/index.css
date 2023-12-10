@@ -2,11 +2,38 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 2.5;
   font-weight: 400;
-  color: #213547;
+  color: palevioletred;
   background-color: #1b1313;
   overflow-x: hidden;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  color: darkcyan;
+  background-color: rgba(216, 112, 147, 0.5);
+  border: none;
+  border-radius: 0.5em;
+  outline: none;
+}
+
+button:hover {
+  color: paleturquoise;
+  background-color: palevioletred;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+  color: darkcyan;
+  background-color: rgba(216, 112, 147, 0.2);
+  border-bottom: solid 1px palevioletred;
+}
+
+input:hover {
+  color: paleturquoise;
+  background-color: palevioletred;
 }
