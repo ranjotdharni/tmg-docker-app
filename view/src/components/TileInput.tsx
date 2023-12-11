@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, MouseEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 import '../css/tileInput.css'
 
 interface props {
