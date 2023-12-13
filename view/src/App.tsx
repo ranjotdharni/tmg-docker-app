@@ -253,6 +253,10 @@ function App() {
 
   return (
     <>
+      <div className='titleWrapper'>
+        <h1>Tile Map Generator</h1>
+      </div>
+
       {
         (basicTile !== '' ? <img src={basicTile} /> : <></>)
       }
@@ -291,7 +295,7 @@ function App() {
       </div>
 
       <div className='creditBox'>
-        <h2>Created By</h2>
+        <h2>Made By</h2>
         <a href="https://github.com/ranjotdharni" target="_blank">
           <img src={pfp} className="pfp" alt="PFP" />
         </a>

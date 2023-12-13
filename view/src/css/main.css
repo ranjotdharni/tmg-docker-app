@@ -2,13 +2,22 @@ img {
     position: relative;
 }
 
+.titleWrapper {
+    width: 100%;
+}
+
+.titleWrapper h1 {
+    border: solid 1px palevioletred;
+}
+
 .creditBox {
   position: absolute;
+  top: 10rem;
   width: 99%;
   padding-right: 1%;
   display: flex;
   justify-content: flex-end;
-  color: darkcyan;
+  z-index: -1;
 }
 
 .creditBox a {
@@ -71,7 +80,7 @@ img {
     color: darkcyan;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 850px) {
     .creditBox {
         display: none;
     }
