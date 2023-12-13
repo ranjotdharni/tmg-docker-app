@@ -67,7 +67,7 @@ function SingleTileInput({ tileTypes, passUp } : { tileTypes: [string, string, s
                 {
                     tileTypes.map((value, index) => {
                         return (
-                            <option value={index}>{value}</option>
+                            <option key={Math.floor(Math.random() * 1000)} value={index}>{value}</option>
                         )
                     })
                 }

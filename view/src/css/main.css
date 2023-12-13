@@ -4,11 +4,11 @@ img {
 
 .creditBox {
   position: absolute;
-  left: 75%;
-  min-width: 50px;
+  width: 99%;
+  padding-right: 1%;
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
+  color: darkcyan;
 }
 
 .creditBox a {
@@ -22,56 +22,23 @@ img {
 }
 
 .setSize {
-    width: auto !important;
-    position: fixed;
-    top: 0;
-    left: 5px;
-    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: min(2.5%, 2rem);
+    margin-bottom: 1.5rem;
+}
+
+.setSize input {
+    width: 12rem;
+    font-size: 2em;
 }
 
 .setSize label {
-    margin-right: 1em;
+    margin-right: 5px;
 }
 
-.addBorder {
-    width: auto !important;
-    position: fixed;
-    left: 0;
-}
-
-.generate {
-    width: auto !important;
-    position: fixed;
-    left: 9em;
-}
-
-.message {
-    width: auto !important;
-    position: fixed;
-    top: 1em;
-    z-index: 2;
-}
-
-.vertical {
-    top: 5em;
-}
-
-.example {
-    width: auto !important;
-    position: fixed;
-    left: 0;
-    top: 7em;
-}
-
-.instructions {
-    width: auto !important;
-    position: fixed;
-    left: 8em;
-    top: 7em;
-}
-
-.frontButton {
-    z-index: 2;
+.setSize label:last-of-type {
     margin-left: 5px;
 }
 
@@ -85,16 +52,27 @@ img {
     object-fit: contain;
 }
 
-@media (max-width: 1500px) {
-    .formStyle {
-        top: 8em;
-    }
+.frontContainer {
+    max-width: min(95%, 550px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(14.25rem, 100%), 1fr));
+    grid-gap: 0.25em;
+    place-items: center;
+    margin-left: min(2.5%, 2rem);
+}
 
+.frontContainer button {
+    margin: 2px;
+}
+
+.frontContainer::after {
+    content: "Please read the instructions.";
+    font-weight: bold;
+    color: darkcyan;
+}
+
+@media (max-width: 1100px) {
     .creditBox {
         display: none;
-    }
-
-    .viewWidthTopBreak {
-        top: 9em;
     }
 }

@@ -15,8 +15,10 @@ button {
   color: darkcyan;
   background-color: rgba(216, 112, 147, 0.5);
   border: none;
-  border-radius: 0.5em;
+  border-radius: 1em;
   outline: none;
+  min-height: 2em;
+  font-weight: bold;
 }
 
 button:hover {

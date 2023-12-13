@@ -1,5 +1,4 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import pfp from './assets/pfp_cropped.png'
 import example from './assets/example.json'
 import './App.css'
 import './css/main.css'
@@ -24,7 +23,7 @@ function App() {
   const [message, setMessage] = useState<string>('')
   const [download, setDownload] = useState<string>('')
   const [basicTile, setBasicTile] = useState<string>('')
-  const [borderTiles, setBorderTiles] = useState<BorderTiles>([])
+  const [borderTiles, setBorderTiles] = useState<BorderTiles>([['', ['', '', '', ''], ['', '', '', ''], ['', '', '', ''], 'border' + Math.floor(Math.random() * 1000000)]])
 
   function newMessage(message: string) {
     setMessage(message)
@@ -63,48 +62,49 @@ function App() {
   async function handleSubmit(evt: MouseEvent<HTMLButtonElement>) {
     evt.preventDefault()
 
-    setDownload('')
-
-    if (tileSize < 4) {
-      newMessage('Minimum tile size is 4 pixels')
+    function exit(message: string) {
+      newMessage(message)
       return
     }
 
-    if (basicTile === '') {
-      newMessage('Please Fill All Fields.')
-      return
-    } 
+    setDownload('')
 
-    (borderTiles as Array<typeof FullBorderTile>).forEach((borderTile: typeof FullBorderTile) => {
+    if (tileSize < 4) {
+      return exit('Minimum tile size is 4 pixels')
+    }
+
+    if (basicTile === '') {
+      return exit('Please Fill All Fields.')
+    }
+    
+    for (let i = 0; i < (borderTiles as Array<typeof FullBorderTile>).length; i++) {
+      let borderTile: typeof FullBorderTile = borderTiles[i]
+
       if (borderTile[0].trim() === '') {
-        newMessage('Please Fill All Fields.')
-        return
+        return exit('Please Fill All Fields.')
       }
 
       borderTile[1].forEach((item) => {
         if (item === '')
         {
-          newMessage('Please Fill All Fields.')
-          return
+          return exit('Please Fill All Fields.')
         }
       })
 
       borderTile[2].forEach((item) => {
         if (item === '')
         {
-          newMessage('Please Fill All Fields.')
-          return
+          return exit('Please Fill All Fields.')
         }
       })
 
       borderTile[3].forEach((item) => {
         if (item === '')
         {
-          newMessage('Please Fill All Fields.')
-          return
+          return exit('Please Fill All Fields.')
         }
       })
-    })
+    }
 
     newMessage("Generating...")
 
@@ -254,16 +254,16 @@ function App() {
   return (
     <>
       {
-        (basicTile !== '' ? <img className='viewWidthTopBreak' src={basicTile} /> : <></>)
+        (basicTile !== '' ? <img src={basicTile} /> : <></>)
       }
       {
-        (borderTiles as Array<typeof FullBorderTile>).map((item) => {
+        (borderTiles as Array<typeof FullBorderTile>).map((item, idx) => {
           return (
             <>
-              {item[0] !== '' ? <img className='viewWidthTopBreak' src={item[0]} /> : <></>}
-              {item[1].map((innerItem) => { return ( innerItem !== '' ? <img className='viewWidthTopBreak' src={innerItem} /> : <></> ) })}
-              {item[2].map((innerItem) => { return ( innerItem !== '' ? <img className='viewWidthTopBreak' src={innerItem} /> : <></> ) })}
-              {item[3].map((innerItem) => { return ( innerItem !== '' ? <img className='viewWidthTopBreak' src={innerItem} /> : <></> ) })}
+              {item[0] !== '' ? <img key={item[4] + '0' + `${idx}`} src={item[0]} /> : <></>}
+              {item[1].map((innerItem) => { return ( innerItem !== '' ? <img key={item[4] + '1' + `${idx}`} src={innerItem} /> : <></> ) })}
+              {item[2].map((innerItem) => { return ( innerItem !== '' ? <img key={item[4] + '2' + `${idx}`} src={innerItem} /> : <></> ) })}
+              {item[3].map((innerItem) => { return ( innerItem !== '' ? <img key={item[4] + '3' + `${idx}`} src={innerItem} /> : <></> ) })}
             </>
           )
         })
@@ -280,22 +280,20 @@ function App() {
       <span className='setSize'>
         <label>Tile Size (pixels):</label>
         <input type='number' value={tileSize} onChange={handleSize} />
+        <label>{message}</label>
       </span>
 
-      <button className='addBorder vertical frontButton' onClick={addBorderTile}>Add Border Tile</button>
-      <button className='generate vertical frontButton' onClick={handleSubmit}>Generate</button>
-      <br></br>
-      <button className='example frontButton' onClick={runExample}>Run Example</button>
-      <button className='instructions frontButton' onClick={() => {window.open('https://github.com/ranjotdharni/tmg-docker-app', '_blank');}}>Instructions</button>
-      <p className='message'>{message}</p>
+      <div className='frontContainer'>
+        <button onClick={addBorderTile}>Add Border Tile</button>
+        <button onClick={handleSubmit}>Generate</button>
+        <button onClick={runExample}>Run Example</button>
+        <button onClick={ () => { window.open('https://github.com/ranjotdharni/tmg-docker-app#Instructions', '_blank') } }>Instructions</button>
+      </div>
 
       <div className='creditBox'>
-        <h2>Powered By</h2>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <h2>Created By</h2>
+        <a href="https://github.com/ranjotdharni" target="_blank">
+          <img src={pfp} className="pfp" alt="PFP" />
         </a>
       </div>
         
