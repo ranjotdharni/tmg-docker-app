@@ -1,6 +1,4 @@
 ![Tile Map Generator][titleImage]
-
----
 # Overview
 Welcome to the Tile Map Generation repository!
 
