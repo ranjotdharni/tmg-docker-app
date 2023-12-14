@@ -91,11 +91,10 @@ Then we ask, what do we need at a minimum to produce a reusable, scalable tile (
     A tile that represents the portions of the generated patch that connect with the Basic Tile but isn't curved, the part of the Border Tile that borders the Basic Tile in a "straight" line only. In the above example, this could have been any one of the following **4 tile images**:
 
     <br>
-        <img alt="Water Flat Border 0" src="/readmeassets/waterFlat0.png" />
-        <img alt="Water Flat Border 1" src="/readmeassets/waterFlat1.png" />
-        <img alt="Water Flat Border 2" src="/readmeassets/waterFlat2.png" />
-        <img alt="Water Flat Border 3" src="/readmeassets/waterFlat3.png" />
-    </br>
+
+    ![Water Flat Border 0][wF0] ![Water Flat Border 1][wF1] ![Water Flat Border 2][wF2] ![Water Flat Border 3][wF3]
+    
+    <br>
 
     YOU DO NOT NEED TO INPUT EVERY ONE OF THE THESE TILE IMAGES, you need only **input one of the above images** and it will be rotated to create an accordingly symmetrical tile image for the remaining three. Use the drop-down menu to select which **one** of the above valid forms of Flat Border tile images best corresponds to the image you plan to use for the Flat Border (See the [subtype reference][subtypeReferenceLink] to find which option represents which of the above forms).
 
@@ -108,34 +107,32 @@ Then we ask, what do we need at a minimum to produce a reusable, scalable tile (
     A tile that represents the corner of the generated patch that curves outward and connects with the Basic Tile, the part of the Border Tile that borders the Basic Tile in a curve extending outward into the Basic Tile space. In the above example, this could have been any one of the following **4 tile images**:
 
     <br>
-        <img alt="Water Outward Corner 0" src="/readmeassets/waterOut0.png" />
-        <img alt="Water Outward Corner 1" src="/readmeassets/waterOut1.png" />
-        <img alt="Water Outward Corner 2" src="/readmeassets/waterOut2.png" />
-        <img alt="Water Outward Corner 3" src="/readmeassets/waterOut3.png" />
-    </br>
+
+    ![Water Outward Corner 0][wO0] ![Water Outward Corner 1][wO1] ![Water Outward Corner 2][wO2] ![Water Outward Corner 3][wO3]
+    
+    <br>
 
     YOU DO NOT NEED TO INPUT EVERY ONE OF THE THESE TILE IMAGES, you need only **input one of the above images** and it will be rotated to create an accordingly symmetrical tile image for the remaining three. Use the drop-down menu to select which **one** of the above valid forms of Outward Corner tile images best corresponds to the image you plan to use for the Outward Corner (See the [subtype reference][subtypeReferenceLink] to find which option represents which of the above forms).
 
     <br>
         <div style="width: 100%;display: grid;place-items: center;">
-            <img alt="Flat Border Select" src="/readmeassets/setOutwardCorner.png" />
+            <img alt="Outward Corner Select" src="/readmeassets/setOutwardCorner.png" />
         </div>
     </br>
 4. **Inward Corner**
     A tile that represents the corner of the generated patch that curves inward and connects with the Basic Tile, the part of the Border Tile that borders the Basic TIle in a curve extending inward into the Border Tile space. In the above example, this could have been any one of the following **4 tile images**:
 
     <br>
-        <img alt="Water Inward Corner 0" src="/readmeassets/waterIn0.png" />
-        <img alt="Water Inward Corner 1" src="/readmeassets/waterIn1.png" />
-        <img alt="Water Inward Corner 2" src="/readmeassets/waterIn2.png" />
-        <img alt="Water Inward Corner 3" src="/readmeassets/waterIn3.png" />>
-    </br>
+
+    ![Water Inward Corner 0][wI0] ![Water Inward Corner 1][wI1] ![Water Inward Corner 2][wI2] ![Water Inward Corner 3][wI3]
+    
+    <br>
 
     YOU DO NOT NEED TO INPUT EVERY ONE OF THE THESE TILE IMAGES, you need only **input one of the above images** and it will be rotated to create an accordingly symmetrical tile image for the remaining three. Use the drop-down menu to select which **one** of the above valid forms of Inward Corner tile images best corresponds to the image you plan to use for the Inward Corner (See the [subtype reference][subtypeReferenceLink] to find which option represents which of the above forms).
 
     <br>
         <div style="width: 100%;display: grid;place-items: center;">
-            <img alt="Flat Border Select" src="/readmeassets/setInwardCorner.png" />
+            <img alt="Inward Corner Select" src="/readmeassets/setInwardCorner.png" />
         </div>
     </br>
 
@@ -178,7 +175,7 @@ Pull requests are welcome. Please open a discussion post to talk about any large
 [serviceLink]: http://34.168.145.3:3000/
 [wfcLink]: https://www.youtube.com/watch?v=qRtrj6Pua2A
 [usageLink]: https://github.com/ranjotdharni/tmg-docker-app#Usage
-[subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app#Border-Tile-Subtype-Reference
+[subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app##Border-Tile-Subtype-Reference
 [tmgLink]: https://github.com/ranjotdharni/tiled-map-generator
 [apiFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/tree/main/production/api
 [orchFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/blob/main/production/api/Orchestrator.java
