@@ -193,7 +193,7 @@ Pull requests are welcome. Please open a discussion post to talk about any large
 [runExampleImage]: /readmeassets/runExample.png
 [setTileSize]: /readmeassets/setTileSize.png
 
-[wF0]: /readmeassets/waterFlat0.png
+[wF0]: /readmeassets/WaterFlat0.png
 [wF1]: /readmeassets/waterFlat1.png
 [wF2]: /readmeassets/waterFlat2.png
 [wF3]: /readmeassets/waterFlat3.png
