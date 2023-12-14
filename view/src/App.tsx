@@ -290,7 +290,7 @@ function App() {
         <button onClick={addBorderTile}>Add Border Tile</button>
         <button onClick={handleSubmit}>Generate</button>
         <button onClick={runExample}>Run Example</button>
-        <button onClick={ () => { window.open('https://github.com/ranjotdharni/tmg-docker-app#Usage', '_blank') } }>Instructions</button>
+        <button onClick={ () => { window.open('https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#usage', '_blank') } }>Instructions</button>
       </div>
 
       <div className='creditBox'>
