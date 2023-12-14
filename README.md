@@ -32,7 +32,7 @@ The primary differences between the original implementation and the iteration us
 **The Orchestrator class simply initializes resources and coordinates the execution of the generation algorithm,** otherwise it works almost identically to the Generator class under the hood. The update from the original class was simply to instate **a centralized, additive solution for efficiently managing the multi-step process of reading and handling input** from the frontend.
 
 ---
-# Usage {#usage}
+# Usage
 
 ### Tiles
 To start, we define a **Tile** as any image with equal width and height. Set the **Tile Size** property according to the width and height of the images you plan to input:
@@ -145,7 +145,7 @@ Then we ask, what do we need at a minimum to produce a reusable, scalable tile (
         </div>
     </br>
 
-## Border Tile Subtype Reference {#subtype}
+## Border Tile Subtype Reference
 
 ### Straight Border Options
 | Options | Bordered Left | Bordered Top | Bordered Right | Bordered Bottom |
@@ -183,8 +183,8 @@ Pull requests are welcome. Please open a discussion post to talk about any large
 
 [serviceLink]: http://34.168.145.3:3000/
 [wfcLink]: https://www.youtube.com/watch?v=qRtrj6Pua2A
-[usageLink]: #usage
-[subtypeReferenceLink]: #subtype
+[usageLink]: https://github.com/ranjotdharni/tmg-docker-app#Usage
+[subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app#Border-Tile-Subtype-Reference
 [tmgLink]: https://github.com/ranjotdharni/tiled-map-generator
 [apiFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/tree/main/production/api
 [orchFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/blob/main/production/api/Orchestrator.java
