@@ -174,8 +174,8 @@ Pull requests are welcome. Please open a discussion post to talk about any large
 
 [serviceLink]: http://34.168.145.3:3000/
 [wfcLink]: https://www.youtube.com/watch?v=qRtrj6Pua2A
-[usageLink]: https://github.com/ranjotdharni/tmg-docker-app#usage
-[subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app#border-tile-subtype-reference
+[usageLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#usage
+[subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#border-tile-subtype-reference
 [tmgLink]: https://github.com/ranjotdharni/tiled-map-generator
 [apiFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/tree/main/production/api
 [orchFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/blob/main/production/api/Orchestrator.java
