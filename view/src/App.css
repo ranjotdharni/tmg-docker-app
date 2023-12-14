@@ -3,6 +3,7 @@
 }
 
 a {
+  color: palevioletred;
   position: relative;
   z-index: 2;
 }

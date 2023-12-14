@@ -15,7 +15,7 @@ button {
   color: darkcyan;
   background-color: rgba(216, 112, 147, 0.5);
   border: none;
-  border-radius: 1em;
+  border-radius: 0.25rem;
   outline: none;
   min-height: 2em;
   font-weight: bold;

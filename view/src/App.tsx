@@ -1,4 +1,3 @@
-import pfp from './assets/pfp_cropped.png'
 import example from './assets/example.json'
 import './App.css'
 import './css/main.css'
@@ -264,10 +263,10 @@ function App() {
         (borderTiles as Array<typeof FullBorderTile>).map((item, idx) => {
           return (
             <>
-              {item[0] !== '' ? <img key={item[4] + '0' + `${idx}`} src={item[0]} /> : <></>}
-              {item[1].map((innerItem) => { return ( innerItem !== '' ? <img key={item[4] + '1' + `${idx}`} src={innerItem} /> : <></> ) })}
-              {item[2].map((innerItem) => { return ( innerItem !== '' ? <img key={item[4] + '2' + `${idx}`} src={innerItem} /> : <></> ) })}
-              {item[3].map((innerItem) => { return ( innerItem !== '' ? <img key={item[4] + '3' + `${idx}`} src={innerItem} /> : <></> ) })}
+              {item[0] !== '' ? <img key={`${item[4]}0${idx}`} src={item[0]} /> : <></>}
+              {item[1].map((innerItem) => { return ( innerItem !== '' ? <img key={`${item[4]}1${idx}`} src={innerItem} /> : <></> ) })}
+              {item[2].map((innerItem) => { return ( innerItem !== '' ? <img key={`${item[4]}2${idx}`} src={innerItem} /> : <></> ) })}
+              {item[3].map((innerItem) => { return ( innerItem !== '' ? <img key={`${item[4]}3${idx}`} src={innerItem} /> : <></> ) })}
             </>
           )
         })
@@ -281,24 +280,23 @@ function App() {
         )
       }
 
-      <span className='setSize'>
+      <span className='setSize bringToFront'>
         <label>Tile Size (pixels):</label>
         <input type='number' value={tileSize} onChange={handleSize} />
         <label>{message}</label>
       </span>
 
-      <div className='frontContainer'>
+      <div className='frontContainer bringToFront'>
         <button onClick={addBorderTile}>Add Border Tile</button>
         <button onClick={handleSubmit}>Generate</button>
         <button onClick={runExample}>Run Example</button>
-        <button onClick={ () => { window.open('https://github.com/ranjotdharni/tmg-docker-app#Instructions', '_blank') } }>Instructions</button>
+        <button onClick={ () => { window.open('https://github.com/ranjotdharni/tmg-docker-app#Usage', '_blank') } }>Instructions</button>
       </div>
 
       <div className='creditBox'>
-        <h2>Made By</h2>
-        <a href="https://github.com/ranjotdharni" target="_blank">
-          <img src={pfp} className="pfp" alt="PFP" />
-        </a>
+        <p>
+          Made By <a href="https://github.com/ranjotdharni" target="_blank"> Ranjot Dharni</a>
+        </p>
       </div>
         
       <form className='formStyle'>

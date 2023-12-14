@@ -13,11 +13,12 @@ img {
 .creditBox {
   position: absolute;
   top: 10rem;
-  width: 99%;
+  left: 75%;
+  width: 24%;
   padding-right: 1%;
   display: flex;
   justify-content: flex-end;
-  z-index: -1;
+  z-index: 0;
 }
 
 .creditBox a {
@@ -80,7 +81,11 @@ img {
     color: darkcyan;
 }
 
-@media (max-width: 850px) {
+.bringToFront {
+    z-index: 2;
+}
+
+@media (max-width: 1000px) {
     .creditBox {
         display: none;
     }
