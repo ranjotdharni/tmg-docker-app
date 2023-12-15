@@ -172,7 +172,7 @@ Pull requests are welcome. Please open a discussion post to talk about any large
 - [ ] **Decorations**
     The underlying image generation framework already has a working implementation for applying decorators to the output tile map image. **Decorators** are images that are applied on top of the tile map after generation, their primary purpose is for deblemishing the output of the generator and imposing non-tile images on top of the generated output (i.e. trees, buildings, boulders). The web application's interface could be updated to allow interactions which set Decorator images on the generated output (See the *[tiled-map-generator][tmgLink]* repository for an in-depth explanation on how Decorators are implemented).
 
-[serviceLink]: http://34.168.145.3:3000/
+[serviceLink]: http://54.190.33.199:443/
 [wfcLink]: https://www.youtube.com/watch?v=qRtrj6Pua2A
 [usageLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#usage
 [subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#border-tile-subtype-reference
