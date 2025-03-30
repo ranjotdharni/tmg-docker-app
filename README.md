@@ -152,19 +152,47 @@ Then we ask, what do we need at a minimum to produce a reusable, scalable tile (
 
 ---
 # Deployment
-The application is hosted on an **Amazon Web Services Elastic Compute** instance. 
+The application is hosted on an ~~Amazon Web Services Elastic Compute~~ **Oracle Cloud Infrastructure** instance. 
 
 ### Core Features:
 
 - Multi-container **Docker** application with separate containers for backend image processing and frontend user interface.
 - Built-in **Java** implementation using [Wave Function Collapse][wfcLink] for efficient procedural generation.
 - Containerization minimizes resource overhead, ensuring optimal performance.
-- Currently deployed to a **Linux VM running on EC2.**
+- Currently deployed to an **AMD-based Ubuntu VM running on OCI Compute.**
 
+### Deploying
+
+On your local machine, switch to the frontend directory:
+
+```
+cd view
+```
+
+Ensure all dependencies are installed and run the build command:
+
+```
+npm install && npm run build
+```
+
+The above command will output your frontend build to the proper location in the *production* directory. Upload the production folder and Docker Compose file to your VM instance, then ensure [Docker Compose][composeLink] is installed on your virtual machine. Finally, you can start the service using the command**:
+
+```
+docker compose up -d
+```
+
+Check if both the frontend and backend containers are running with:
+
+```
+docker ps
+```
+
+**Service is mapped to port 443.*  
+**Use the '-d' flag when starting Docker Compose to run service as a daemon; this is optional.*
 
 ---
 # Contributing
-Pull requests are welcome. Please open a discussion post to talk about any large feature changes or updates you would like to see before making the pull request. Although the first production build is highly limited, the underlying framework was built with some extensibility options in mind and is compatible with a number of potential feature additions.
+Pull requests are welcome. Please open a discussion post to talk about any large feature changes or updates you would like to see before making the pull request. Although the first production build is highly limited, the underlying framework was built with extensibility options in mind and is compatible with a number of potential feature additions.
 
 ### To-Do List:
 - [ ] **Allow user to set specific Border Tile subtypes**
@@ -172,13 +200,14 @@ Pull requests are welcome. Please open a discussion post to talk about any large
 - [ ] **Decorations**
     The underlying image generation framework already has a working implementation for applying decorators to the output tile map image. **Decorators** are images that are applied on top of the tile map after generation, their primary purpose is for deblemishing the output of the generator and imposing non-tile images on top of the generated output (i.e. trees, buildings, boulders). The web application's interface could be updated to allow interactions which set Decorator images on the generated output (See the *[tiled-map-generator][tmgLink]* repository for an in-depth explanation on how Decorators are implemented).
 
-[serviceLink]: http://ec2-54-190-33-199.us-west-2.compute.amazonaws.com:443/
+[serviceLink]: http://159.54.169.148:443/
 [wfcLink]: https://www.youtube.com/watch?v=qRtrj6Pua2A
 [usageLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#usage
 [subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#border-tile-subtype-reference
 [tmgLink]: https://github.com/ranjotdharni/tiled-map-generator
 [apiFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/tree/main/production/api
 [orchFolderLink]: https://github.com/ranjotdharni/tmg-docker-app/blob/main/production/api/Orchestrator.java
+[composeLink]: https://docs.docker.com/compose/install/linux/
 
 [titleImage]: /readmeassets/title.png
 [runExampleImage]: /readmeassets/runExample.png
