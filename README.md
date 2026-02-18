@@ -1,10 +1,12 @@
 ![Tile Map Generator][titleImage]
+# ATTENTION! This service has been taken offline indefinitely.
+
 # Overview
 Welcome to the Tile Map Generation repository!
 
 This repository houses a powerful procedural generation application designed to create *1920x1080* images of a **2D tile map** from a set of basic tile images. Whether you're a developer or a user interested in **generating unique visual content,** this application provides a seamless experience.
 
-Explore the [instructions][usageLink] for proper usage guidelines and essential terminology. Dive into the tools provided by this robust application and start generating captivating 2D tile maps effortlessly. You can access the service [here][serviceLink].
+Explore the [instructions][usageLink] for proper usage guidelines and essential terminology. Dive into the tools provided by this robust application and start generating captivating 2D tile maps effortlessly. ~~You can access the service [here][serviceLink].~~
 
 ---
 # Development
@@ -200,7 +202,7 @@ Pull requests are welcome. Please open a discussion post to talk about any large
 - [ ] **Decorations**
     The underlying image generation framework already has a working implementation for applying decorators to the output tile map image. **Decorators** are images that are applied on top of the tile map after generation, their primary purpose is for deblemishing the output of the generator and imposing non-tile images on top of the generated output (i.e. trees, buildings, boulders). The web application's interface could be updated to allow interactions which set Decorator images on the generated output (See the *[tiled-map-generator][tmgLink]* repository for an in-depth explanation on how Decorators are implemented).
 
-[serviceLink]: http://159.54.169.148:443/
+[serviceLink]: https://github.com/ranjotdharni/tmg-docker-app
 [wfcLink]: https://www.youtube.com/watch?v=qRtrj6Pua2A
 [usageLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#usage
 [subtypeReferenceLink]: https://github.com/ranjotdharni/tmg-docker-app?tab=readme-ov-file#border-tile-subtype-reference
