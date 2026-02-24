@@ -1,5 +1,5 @@
 ![Tile Map Generator][titleImage]
-# ATTENTION! This service has been taken offline indefinitely.
+# ATTENTION! This service has been retired.
 
 # Overview
 Welcome to the Tile Map Generation repository!
